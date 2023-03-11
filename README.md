@@ -1,2 +1,2 @@
-# beans-bot
+# islander-bot
 General utility Discord Bot
