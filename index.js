@@ -21,7 +21,7 @@ const commands = [
     {
         name: 'bang',
         description: 'Shoot something',
-    }
+    },
     ];
 
 
@@ -156,6 +156,6 @@ client.on('interactionCreate', async interaction => {
         await interaction.reply("You shot "+ items[Math.floor(Math.random() * items.length)] +"!")
     
     }
-
-});
+}
+)
 client.login(token)
