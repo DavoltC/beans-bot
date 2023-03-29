@@ -22,7 +22,7 @@ const commands = [
         name: 'bang',
         description: 'Shoot something',
     },
-    ];
+];
 
 
 
@@ -118,22 +118,24 @@ client.on('interactionCreate', async interaction => {
 ||**BEANS**!||||**BEANS**!||||**BEANS**!||||**BEANS**!||||**BEANS**!||`)
     }
     if (interaction.commandName === 'find-beans') {
-        let values = [
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-            "", "", "", "", "", "", "", "",
-        ]
-        for (let i=0; i < 64; i++) {
-            if (Math.ceil(Math.random() * 63) == 5) {
-                values[i] = ":beans:"
-                log("generated beans at square " + (i + 1))
-            } else {
-                values[i] = ":corn:"
+        while (!values.includes(":beans:")) {
+            for (let i = 0; i < 64; i++) {
+                let values = [
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "",
+                ]
+                if (Math.ceil(Math.random() * 63) == 5) {
+                    values[i] = ":beans:"
+                    log("generated beans at square " + (i + 1))
+                } else {
+                    values[i] = ":corn:"
+                }
             }
         }
         await interaction.reply(`
@@ -153,8 +155,8 @@ client.on('interactionCreate', async interaction => {
             "an old ladies teapot(so she hits you with her purse!)", "a FLYING FROGGO!",
             "a propane tank... **(BOOM!!!)**"
         ]
-        await interaction.reply("You shot "+ items[Math.floor(Math.random() * items.length)] +"!")
-    
+        await interaction.reply("You shot " + items[Math.floor(Math.random() * items.length)] + "!")
+
     }
 }
 )
